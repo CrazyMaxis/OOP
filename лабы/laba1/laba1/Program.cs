@@ -166,6 +166,7 @@ namespace laba1
 
             // ivar = 5.3;  - ошибка
 
+
             // 2 Задание
             // Строки
 
@@ -231,8 +232,57 @@ namespace laba1
             var text = new StringBuilder("Hello, World!!! My name's Maxim", 60);
             text.Remove(13, 2);
             text.Insert(0, "Mister, ");
-            text.Replace("Nikita", "Никита");
+            text.Replace("Maxim", "Максим");
             text.Append(", I am programmer");
+
+
+            // 3 Задание
+            // Массивы
+
+            int[,] matrix = new int[3, 3] { { 0, 1, 2 },
+                                            { 3, 4, 5 },
+                                            { 6, 7, 8 } };
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(matrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            // Массив string
+
+            string[] arrSTR = new string[5] { "Петя", "Nikita", "Katya", "Masha", "Sasha" };
+            foreach (string s in arrSTR)
+            {
+                Console.Write(s + " ");
+            }
+            Console.WriteLine("Длина массива{0}", arrSTR.Length);
+            Console.WriteLine("Выберите элемент, который надо поменять: ");
+            int check = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("Введите строку: ");
+            arrSTR[check] = Console.ReadLine();
+
+            // Ступенчатый(зубчатый) массив
+
+            float[] Arr01 = new float[2];
+            float[] Arr02 = new float[3];
+            float[] Arr03 = new float[4];
+            float[][] Arr00 = new float[3][] { Arr01, Arr02, Arr03 };
+            for (int i = 0; i < Arr00.Length; i++)
+            {
+                for (int j = 0; j < Arr00[i].Length; j++)
+                {
+                    Console.WriteLine("Y: {0} X: {1}", i, j);
+                    Arr00[i][j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            // Неявно типизированный массив
+
+            var Arr20 = new[] { 1, 2, 3 };
+            var Arr21 = new[] { "Yashnii", "Karebo", "Tarakanov" };
         }
     }
 }

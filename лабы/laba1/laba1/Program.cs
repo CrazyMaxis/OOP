@@ -131,6 +131,38 @@ namespace laba1
             // распаковка
 
             int unpacking = (int)packing;
+
+
+            // неявно типизированные переменные
+
+            var ivar = 5;
+            var fvar = new float[9];
+            var svar = "Hello World!!!";
+            Console.WriteLine("Введите неявно типизированную переменную(цифру): ");
+            var shvar = Convert.ToInt16(Console.ReadLine());
+
+            // Nullable переменная
+
+            string str = null;
+            object nullablevar = null;
+            dynamic nullablevar2 = null;
+
+            Nullable<int> nullableint = null;
+            short? nullableshort = null;
+            Console.WriteLine(nullableshort.HasValue);
+            Console.WriteLine(nullableint ?? 0);
+            // varaible.Value; // ошибка
+
+
+            int first = 24;
+            int? result = first + nullableint;
+            bool firstboo = nullableint > first;
+            bool firstboo2 = nullableint < first;
+            bool firstboo3 = nullableint == first;
+
+            // присвоение var другого типа
+
+            // ivar = 5.3;  - ошибка
         }
     }
 }

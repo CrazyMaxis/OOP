@@ -1,4 +1,5 @@
 ﻿using System;   // подключено пространство имен System, но с последних версий не нужно подключать
+using System.Text;
 
 /*
     № 1 Основы CLR и .NET. Типы. Массивы, кортежи и строки
@@ -10,6 +11,7 @@ namespace laba1
     {
         static void Main(string[] args)
         {
+            // 1 Задание
             // Числовые типы (целочисленные)
             Console.WriteLine("Введите переменную типа Byte");
             byte bvalue = 0;        // минимальное значение 0, максимальное 255, размер 1 байт
@@ -163,6 +165,74 @@ namespace laba1
             // присвоение var другого типа
 
             // ivar = 5.3;  - ошибка
+
+            // 2 Задание
+            // Строки
+
+            string str1 = "Line first";
+            string str2 = "Line second";
+
+            // Сравнение строк
+
+            if (str1.Length > str2.Length)
+            {
+                Console.WriteLine("str1 < str2");
+            }
+
+            else if (str1.Length < str2.Length)
+            {
+                Console.WriteLine("str2 > str1");
+            }
+
+            else
+            {
+                Console.WriteLine("str1 == str2");
+            }
+
+            int comparestr = String.Compare(str1, str2); // -1
+
+            // сцепление, копирование, выделение подстроки, разделение строки на слова .....
+
+            string Line1 = "Привет    Мир!!!";
+            string Line2 = "Меня зовут Максим Поздняков";
+            string Line3 = "Мир";
+
+            string Line00 = Line1 + Line3; // сцепление
+            string Line01 = String.Concat(Line1, Line3);
+            string Line02 = String.Join(' ', Line1, Line2, Line3);
+
+            string Line10 = (string)Line1.Clone(); // копирование
+            string Line11 = String.Copy(Line1); // устаревшее
+            char[] arr = new char[8];
+            Line1.CopyTo(0, arr, 0, 7);
+
+            string Line20 = Line1.Substring(0, 5); // выделение подстроки
+            Console.WriteLine(Line1.Contains(Line3));
+
+            string[] Line30 = Line1.Split(' ', StringSplitOptions.RemoveEmptyEntries); // разделение на слова
+
+            string Line40 = Line2.Insert(0, Line3); // вставка подстроки в заданную позицию
+
+            string Line50 = Line2.Remove(0, 5); // удаление подстроки
+
+            Console.WriteLine($"Вы вводили значения: Decimal - {devalue}"); // интерполирование строк
+
+            // метод String.IsNullOrEmpty
+
+            string Line60 = null;
+            string Line61 = " ";
+
+            Console.WriteLine(String.IsNullOrEmpty(Line60)); // true
+            Console.WriteLine(String.IsNullOrEmpty(Line61)); // false
+            Console.WriteLine(String.IsNullOrWhiteSpace(Line61)); // true
+
+            // StringBuilder
+
+            var text = new StringBuilder("Hello, World!!! My name's Maxim", 60);
+            text.Remove(13, 2);
+            text.Insert(0, "Mister, ");
+            text.Replace("Nikita", "Никита");
+            text.Append(", I am programmer");
         }
     }
 }

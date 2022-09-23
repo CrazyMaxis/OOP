@@ -254,13 +254,15 @@ namespace laba1
             // Массив string
 
             string[] arrSTR = new string[5] { "Петя", "Nikita", "Katya", "Masha", "Sasha" };
+
             foreach (string s in arrSTR)
             {
                 Console.Write(s + " ");
             }
+
             Console.WriteLine("Длина массива{0}", arrSTR.Length);
             Console.WriteLine("Выберите элемент, который надо поменять: ");
-            int check = Convert.ToByte(Console.ReadLine());
+            byte check = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("Введите строку: ");
             arrSTR[check] = Console.ReadLine();
 
@@ -283,6 +285,61 @@ namespace laba1
 
             var Arr20 = new[] { 1, 2, 3 };
             var Arr21 = new[] { "Yashnii", "Karebo", "Tarakanov" };
+
+
+            // 4 Задание
+            // Кортежи
+
+            var kortezh1 = (1, "Masha", 'a', "Petya", (ulong)50);
+            var kortezh2 = (1, 2);
+            var kortezh3 = (1, 2);
+            // (int, string, char, string, ulong) kortezh = (...);
+            Console.WriteLine(kortezh1);
+
+            Console.WriteLine(kortezh1.Item3);
+            Console.WriteLine(kortezh1.Item5);
+
+            (var kortezh21, var kortezh31) = ("sss", 25);
+            var (kortrzh3, kortezh4) = (1, 5);
+            int number0 = kortezh1.Item1;
+
+            Console.WriteLine(kortezh3 == kortezh2);
+            Console.WriteLine(kortezh3 != kortezh2);
+
+
+            // 5 Задание
+            // Локальная функция
+
+            int[] arr22 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            string str99 = "MAXIM";
+            (int, int, int, char) func(int[] arr, string line)
+            {
+                return (arr.Max(), arr.Min(), arr.Sum(), line[0]);
+            }
+            var result2 = func(arr22, str99);
+
+            // checked/ unchecked
+
+            void func2()
+            {
+                checked
+                {
+                    int maxi = Int32.MaxValue;
+                    // maxi++;
+                }
+                return;
+            }
+            void func3()
+            {
+                unchecked
+                {
+                    int maxi = Int32.MaxValue;
+                    maxi++;
+                }
+                return;
+            }
+            func2();
+            func3();
         }
     }
 }

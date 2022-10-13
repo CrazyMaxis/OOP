@@ -10,7 +10,7 @@ namespace laba2
         static private int? _counter;
         private readonly int _id;
         private string? _brand;
-        private DateTime? _realeseYear = new DateTime();
+        private string? _realeseYear;
         private string? _color;
         private int? _price;
         private int? _registrationNumber;
@@ -20,24 +20,70 @@ namespace laba2
             Console.WriteLine("В данной программе хранится информация об студентах!");
         } // static конструктор
 
-        public Car(int id, string? brand) : this(brand) 
+        public Car()
         {
             _counter++;
         }
-        
-        private Car(string? brand)
+
+        //public Car(int id, string? brand) : this(brand)
+        //{
+        //    _counter++;
+        //}
+
+        //private Car(string? brand)
+        //{
+        //    _brand = brand;
+        //}
+
+        //public Car(int id = 0, string? brand = null, DateTime? realeseYear = null, string? color = null, int? price = null, int? registrationNumber = null)
+        //{
+        //    _id = id;
+        //    _brand = brand;
+        //    _realeseYear = realeseYear;
+        //    _color = color;
+        //    _price = price;
+        //    _registrationNumber = registrationNumber;
+        //}
+
+
+        public int Counter
         {
-            _brand = brand;
+            get { return (int)_counter; }
         }
 
-        public Car(int id = 0, string? brand = null, DateTime? realeseYear = null, string? color = null, int? price = null, int? registrationNumber = null)
+        public int ID
         {
-            _id = id;
-            _brand = brand;
-            _realeseYear = realeseYear;
-            _color = color;
-            _price = price;
-            _registrationNumber = registrationNumber;
+            get { return (int)_id; }
+        }
+
+        public string Brand
+        {
+            get { return (string)_brand; }
+            set { _brand = value; }
+        }
+
+        public string RealeseYear
+        {
+            get { return (string)_realeseYear; }
+            set { _realeseYear = value; }
+        }
+
+        public string Color
+        {
+            get { return (string)_color; }
+            set { _color = value; }
+        }
+
+        public int Price
+        {
+            get { return (int)_price; }
+            set { _price = value; }
+        }
+
+        public int RegistrationNumber
+        {
+            get { return (int)_registrationNumber; }
+            set { _registrationNumber = value; }
         }
     }
 }

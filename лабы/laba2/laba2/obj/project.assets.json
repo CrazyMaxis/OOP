@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Desktop\\лабы\\3 сем\\ооп\\laba2\\laba2\\laba2.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\лабы\\3сем\\ооп\\laba2\\laba2\\laba2.csproj",
       "projectName": "laba2",
-      "projectPath": "C:\\Users\\USER\\Desktop\\лабы\\3 сем\\ооп\\laba2\\laba2\\laba2.csproj",
+      "projectPath": "C:\\Users\\USER\\Desktop\\лабы\\3сем\\ооп\\laba2\\laba2\\laba2.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Desktop\\лабы\\3 сем\\ооп\\laba2\\laba2\\obj\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\лабы\\3сем\\ооп\\laba2\\laba2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

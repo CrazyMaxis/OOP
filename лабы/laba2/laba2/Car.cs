@@ -101,6 +101,16 @@ namespace laba2
             set { _registrationNumber = value; }
         }
 
+        public void GetId(out int id)
+        {
+            id = (int)_id;
+        } // out
+
+        public void GetGroup(ref int price)
+        {
+            price = (int)_price;
+        } // ref
+
         public void GetInformationOfCar()
         {
             Console.WriteLine("Информация о машине.");

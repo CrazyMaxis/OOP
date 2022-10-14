@@ -26,26 +26,30 @@ namespace laba2
             _counter++;
         }
 
-        //public Car(int id, string? brand) : this(brand)
-        //{
-        //    _counter++;
-        //}
+        public Car(int id, string? brand) : this(brand)
+        {
+            _counter++;
+        }
 
-        //private Car(string? brand)
-        //{
-        //    _brand = brand;
-        //}
+        private Car(string? brand)
+        {
+            _brand = brand;
+        }
 
-        //public Car(int id = 0, string? brand = null, DateTime? realeseYear = null, string? color = null, int? price = null, int? registrationNumber = null)
-        //{
-        //    _id = id;
-        //    _brand = brand;
-        //    _realeseYear = realeseYear;
-        //    _color = color;
-        //    _price = price;
-        //    _registrationNumber = registrationNumber;
-        //}
+        public Car(int id = 0, string? brand = null, int? realeseYear = null, string? color = null, int? price = null, int? registrationNumber = null)
+        {
+            _id = id;
+            _brand = brand;
+            _realeseYear = realeseYear;
+            _color = color;
+            _price = price;
+            _registrationNumber = registrationNumber;
+        }
 
+        ~Car()
+        {
+            Console.WriteLine("Спасибо за использование программы!");
+        }
 
         public int Counter
         {

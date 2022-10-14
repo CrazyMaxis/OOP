@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using System.Collections.Specialized;
+using System.Diagnostics.Metrics;
 using System.Net;
 using System.Text.RegularExpressions;
 
@@ -98,6 +99,17 @@ namespace laba2
         {
             get { return (int)_registrationNumber; }
             set { _registrationNumber = value; }
+        }
+
+        public void GetInformationOfCar()
+        {
+            Console.WriteLine("Информация о машине.");
+            Console.WriteLine($"ID машины: {_id}");
+            Console.WriteLine($"Марка машины: {_brand}");
+            Console.WriteLine($"Цвет машины: {_color}");
+            Console.WriteLine($"Год выпуска: {_realeseYear}");
+            Console.WriteLine($"Регистрационный номер: {_registrationNumber}");
+            Console.WriteLine($"Цена: {_price}$");
         }
     }
 

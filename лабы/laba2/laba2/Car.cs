@@ -26,9 +26,11 @@ namespace laba2
             _counter++;
         }
 
-        public Car(int id, string? brand) : this(brand)
+        public Car(string? color, string? brand, int? realeseYear) : this(brand)
         {
             _counter++;
+            _id = GetHashCode();
+            _realeseYear = realeseYear;
         }
 
         private Car(string? brand)
@@ -36,11 +38,11 @@ namespace laba2
             _brand = brand;
         }
 
-        public Car(int id = 0, string? brand = null, int? realeseYear = null, string? color = null, int? price = null, int? registrationNumber = null)
+        public Car(string? brand = null, int? realeseYear = null, string? color = null, int? price = null, int? registrationNumber = null)
         {
-            _id = id;
             _brand = brand;
-            _realeseYear = realeseYear;
+            _id = GetHashCode();
+            RealeseYear = (int)realeseYear;
             _color = color;
             _price = price;
             _registrationNumber = registrationNumber;
@@ -66,7 +68,17 @@ namespace laba2
             get { return (string)_brand; }
             set { _brand = value; }
         }
-
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            Random rand = new Random();
+            for (int i = 0; i < _brand.Length; i++)
+            {
+                hash += _brand[i];
+            }
+            hash *= rand.Next(1000, 999999);
+            return (int)Math.Abs(hash * _brand.Length);
+        }
         public int RealeseYear
         {
             get { return (int)_realeseYear; }
@@ -124,6 +136,7 @@ namespace laba2
             Console.WriteLine($"Год выпуска: {_realeseYear}");
             Console.WriteLine($"Регистрационный номер: {_registrationNumber}");
             Console.WriteLine($"Цена: {_price}$");
+            Console.WriteLine(new String('-', 50));
         }
     }
 

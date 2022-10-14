@@ -10,9 +10,9 @@ namespace laba2
         static private int? _counter;
         private readonly int _id;
         private string? _brand;
-        private string? _realeseYear;
         private string? _color;
         private int? _price;
+        private int? _realeseYear;
         private int? _registrationNumber;
 
         static Car()
@@ -62,10 +62,17 @@ namespace laba2
             set { _brand = value; }
         }
 
-        public string RealeseYear
+        public int RealeseYear
         {
-            get { return (string)_realeseYear; }
-            set { _realeseYear = value; }
+            get { return (int)_realeseYear; }
+            set {
+                while (!ValidationOfInformation.CheckRealeaseYear(value))
+                {
+                    Console.WriteLine("Неправильно введены данные. Попробуйте еще раз.");
+                    value = Convert.ToInt32(Console.ReadLine());
+                }
+                _realeseYear = value; 
+                }
         }
 
         public string Color
@@ -77,13 +84,30 @@ namespace laba2
         public int Price
         {
             get { return (int)_price; }
-            set { _price = value; }
+            set {
+                while (!ValidationOfInformation.CheckPrice(value))
+                {
+                    Console.WriteLine("Неправильно введены данные. Попробуйте еще раз.");
+                    value = Convert.ToInt32(Console.ReadLine());
+                }
+                _price = value; 
+                }
         }
 
         public int RegistrationNumber
         {
             get { return (int)_registrationNumber; }
             set { _registrationNumber = value; }
+        }
+    }
+
+    partial class ValidationOfInformation
+    {
+        public static bool CheckPrice(int price)
+        {
+            if (price < 1000)
+                return false;
+            return true;
         }
     }
 }

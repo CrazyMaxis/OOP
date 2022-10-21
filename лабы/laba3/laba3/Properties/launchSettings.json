@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "laba3": {
+      "commandName": "Project",
+      "hotReloadEnabled": true
+    }
+  }
+}

@@ -15,5 +15,5 @@
             set => next = value;
         }
     }
-   
+    
 }

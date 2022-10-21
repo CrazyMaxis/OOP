@@ -13,3 +13,5 @@ C:\Users\USER\Desktop\лабы\3сем\ооп\laba3\laba3\obj\Debug\net6.0\refin
 C:\Users\USER\Desktop\лабы\3сем\ооп\laba3\laba3\obj\Debug\net6.0\laba3.pdb
 C:\Users\USER\Desktop\лабы\3сем\ооп\laba3\laba3\obj\Debug\net6.0\laba3.genruntimeconfig.cache
 C:\Users\USER\Desktop\лабы\3сем\ооп\laba3\laba3\obj\Debug\net6.0\ref\laba3.dll
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba3\laba3\obj\Debug\net6.0\laba3.Properties.Resources.resources
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba3\laba3\obj\Debug\net6.0\laba3.csproj.GenerateResource.cache

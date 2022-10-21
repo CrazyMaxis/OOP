@@ -110,8 +110,49 @@
 
         public static bool operator false(List list1)
         {
-            return !(true);
+            if (list1.head == null)
+                return false;
+            else
+                return true;
         }
+
+        Production Product = new Production(199, "БЕЛАЗ"); // вложенный объект
+        internal class Production
+        {
+            private int _id;
+            private string _nameOfOrganization;
+
+            public Production(int id, string nameOfOrganization)
+            {
+                _id = id;
+                _nameOfOrganization = nameOfOrganization;
+            }
+
+            public int Id
+            {
+                get
+                {
+                    return _id;
+                }
+                set
+                {
+                    _id = value;
+                }
+            }
+
+            public string NameOfOrganization
+            {
+                get
+                {
+                    return _nameOfOrganization;
+                }
+                set
+                {
+                    _nameOfOrganization = value;
+                }
+            }
+        }
+
         
     }
 }

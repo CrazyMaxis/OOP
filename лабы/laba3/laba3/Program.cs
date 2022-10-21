@@ -28,6 +28,8 @@
                 Console.WriteLine("Пустой");
             else
                 Console.WriteLine("Не пустой");
+
+            List.Production Product1 = new List.Production(123, "ИП ПИгМар"); 
         }
     }
 }

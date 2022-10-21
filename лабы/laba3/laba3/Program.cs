@@ -4,7 +4,30 @@
     {
         static void Main(string[] args)
         {
-            
+            List list1 = new List();
+            List list2 = new List();
+            List list3 = new List();
+
+            list1.AddNode("A");
+            list1.AddNode("B");
+            list2.AddNode("C");
+            list2.AddNode("D");
+
+            list1.ShowInfo();
+            list2.ShowInfo();
+
+            if (list3)
+                Console.WriteLine("Пустой");
+            else
+                Console.WriteLine("Не пустой");
+
+            list3 = list1 + list2;
+            list3.ShowInfo();
+
+            if (list3)
+                Console.WriteLine("Пустой");
+            else
+                Console.WriteLine("Не пустой");
         }
     }
 }

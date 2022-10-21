@@ -1,10 +1,12 @@
-﻿namespace laba3
+﻿using System.Security.Cryptography;
+
+namespace laba3
 {
     internal class List
     {
-        Node tail;
-        Node head;
-        int length;
+        private Node tail;
+        private Node head;
+        private int length;
 
         public List()
         {
@@ -15,7 +17,14 @@
 
         public Node Head
         {
-            get => head;
+            get { return head; }
+            set { head = value; }
+        }
+
+        public int Length
+        {
+            get { return length; }
+            set { length = value; }
         }
 
         public void AddNode(string info)
@@ -24,14 +33,9 @@
             node.Info = info;
 
             if (head == null)
-            {
                 head = node;
-            }
-
             else
-            {
                 tail.Next = node;
-            }
 
             tail = node;
             length++;
@@ -40,26 +44,38 @@
         public void ShowInfo()
         {
             Node node = head;
+
             while (node != null)
             {
                 Console.Write(node.Info);
                 node = node.Next;
             }
+
             Console.WriteLine();
+        }
+
+        public void Copy(List list)
+        {
+            head = list.head;
+            tail = list.tail;
+            length = list.length;
         }
 
         public static List operator +(List list1, List list2)
         {
-            Node curr2 = list2.head;
-            while (curr2 != null)
+            Node curr = list2.head;
+            List list3 = new List();
+            list3.Copy(list1);
+
+            while (curr != null)
             {
-                list1.tail.Next = curr2;
-                list1.tail = curr2;
-                curr2 = curr2.Next;
-                list1.length++;
+                list3.tail.Next = curr;
+                list3.tail = curr;
+                curr = curr.Next;
+                list3.length++;
             }
 
-            return list1;
+            return list3;
         }
 
         public static List operator --(List list)
@@ -72,9 +88,7 @@
         public static bool operator ==(List list1, List list2)
         {
             if (list1.length != list2.length)
-            {
                 return false;
-            }
 
             Node curr1 = list1.head;
             Node curr2 = list2.head;

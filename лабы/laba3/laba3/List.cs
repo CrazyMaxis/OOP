@@ -130,14 +130,8 @@
 
             public int Id
             {
-                get
-                {
-                    return _id;
-                }
-                set
-                {
-                    _id = value;
-                }
+                get { return _id; }
+                set { _id = value; }
             }
 
             public string NameOfOrganization
@@ -153,6 +147,37 @@
             }
         }
 
-        
+        public class Developer
+        {
+            int _id;
+            string _nameOfDeveloper;
+            string _department;
+
+            public Developer(int id, string name, string otdel)
+            {
+
+                _id = id;
+                _nameOfDeveloper = name;
+                _department = otdel;
+            }
+
+            public int Id
+            {
+                get { return _id; }
+                set { _id = value; }
+            }
+
+            public string NameOfDeveloper
+            {
+                get { return _nameOfDeveloper; }
+                set { _nameOfDeveloper = value; }
+            }
+
+            public string Department
+            {
+                get { return _department; }
+                set { _department = value; }
+            }
+        }
     }
 }

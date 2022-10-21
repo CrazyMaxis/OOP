@@ -29,7 +29,8 @@
             else
                 Console.WriteLine("Не пустой");
 
-            List.Production Product1 = new List.Production(123, "ИП ПИгМар"); 
+            List.Production Product1 = new List.Production(123, "ИП ПИгМар");
+            List.Developer Developer1 = new List.Developer(1, "Поздняков Максим Игоревич", "BelBet");
         }
     }
 }

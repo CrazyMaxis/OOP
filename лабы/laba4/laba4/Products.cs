@@ -1,5 +1,10 @@
 ﻿namespace laba4
 {
+    interface IProduct
+    {
+        string ToString();
+    }
+
     abstract class Product
     {
         protected int _amount;

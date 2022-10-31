@@ -151,7 +151,7 @@
         {
             if (_weight >= weight)
             {
-                Console.WriteLine("Вы купили кусочек торта.");
+                Console.WriteLine($"Вы купили {_weight} грамм конфет.");
                 _weight -= weight;
             }
             else

@@ -220,4 +220,12 @@
             }
         }
     }
+
+    static class Printer
+    {
+        public static void IAmPrinting(Product obj)
+        {
+            Console.WriteLine(obj.ToString());
+        }
+    }
 }

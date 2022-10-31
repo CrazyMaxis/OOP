@@ -8,19 +8,11 @@
 
     abstract class Product
     {
-        protected int _amount;
         protected int _price;
 
-        public Product(int amount, int price)
+        public Product(int price)
         {
-            _amount = amount;
             _price = price;
-        }
-
-        public int Amount
-        {
-            get { return _amount; }
-            set { _amount = value; }
         }
 
         public int Price
@@ -32,14 +24,12 @@
         public virtual void ShowInfo()
         {
             Console.WriteLine("----Информация о товаре----");
-            Console.WriteLine($"Количество: {_amount}");
             Console.WriteLine($"Цена: {_price} руб.");
         }
 
         public override string ToString()
         {
-            Console.WriteLine(GetType().Name);
-            return "\0";
+            return GetType().Name;
         }
     }
 
@@ -48,7 +38,7 @@
         protected int _weight;
         protected string _factory;
 
-        public Pastry(int amount, int price, int weight, string factory) : base(amount, price)
+        public Pastry(int price, int weight, string factory) : base(price)
         {
             _weight = weight;
             _factory = factory;
@@ -69,8 +59,8 @@
         public override void ShowInfo()
         {
             base.ShowInfo();
-            Console.WriteLine($"Вес: {_weight}");
-            Console.WriteLine($"Произведено на заводе: {_factory}");
+            Console.WriteLine($"Вес: {_weight} грамм.");
+            Console.WriteLine($"Произведено на заводе: {_factory}.");
         }
 
         void IProduct.ShowInfo()
@@ -79,12 +69,14 @@
         }
     }
 
-    abstract class Commodity : Product, IProduct
+    abstract class Commodity : Product
     {
+        protected int _amount;
         protected string _name;
 
-        public Commodity(int amount, int price, string name) : base(amount, price)
+        public Commodity(int amount, int price, string name) : base(price)
         {
+            _amount = amount;
             _name = name;
         }
 
@@ -94,10 +86,114 @@
             set { _name = value; }
         }
 
+        public int Amount
+        {
+            get { return _amount; }
+            set { _amount = value; }
+        }
+
         public override void ShowInfo()
         {
-            Console.WriteLine($"Название: {_name}");
             base.ShowInfo();
+            Console.WriteLine($"Название: {_name}.");
+            Console.WriteLine($"Количество: {_amount}.");
+        }
+    }
+
+    internal class Cake : Pastry
+    {
+        public string _name;
+        private int _pieces;
+
+        public Cake(int price, int weight, string factory, string name) : base(price, weight, factory)
+        {
+            _name = name;
+            _pieces = weight / 100;
+        }
+
+        public override void ShowInfo()
+        {
+            base.ShowInfo();
+            Console.WriteLine($"Навзвание торта: {_name}.");
+            Console.WriteLine($"{_pieces} кусков доступно для продажи.");
+        }
+
+        public void Buy()
+        {
+            if (_pieces != 0)
+            {
+                Console.WriteLine("Вы купили кусочек торта.");
+                _pieces--;
+            }
+            else
+            {
+                Console.WriteLine("Недостаточно торта для продажи.");
+            }
+        }
+    }
+
+    internal class Candy : Pastry
+    {
+        public string _name;
+
+        public Candy(int price, int weight, string factory, string name) : base(price, weight, factory)
+        {
+            _name = name;
+        }
+
+        public override void ShowInfo()
+        {
+            base.ShowInfo();
+            Console.WriteLine($"Навзвание конфет: {_name}.");
+        }
+
+        public void Buy(int weight)
+        {
+            if (_weight >= weight)
+            {
+                Console.WriteLine("Вы купили кусочек торта.");
+                _weight -= weight;
+            }
+            else
+            {
+                Console.WriteLine($"Недостаточно грамм конфет для продажи. Осталось всего {_weight} грамм конфет.");
+            }
+        }
+    }
+
+    internal class Watch : Commodity
+    {
+        public Watch(int amount, int price, string name) : base(amount, price, name) { }
+
+        public void Buy()
+        {
+            if (_amount != 0)
+            {
+                Console.WriteLine("Вы купили часы.");
+                _amount--;
+            }
+            else
+            {
+                Console.WriteLine("Недостаточно часов для продажи.");
+            }
+        }
+    }
+
+    sealed class Flower : Commodity
+    {
+        public Flower(int amount, int price, string name) : base(amount, price, name) { }
+
+        public void Buy()
+        {
+            if (_amount != 0)
+            {
+                Console.WriteLine("Вы купили цветок.");
+                _amount--;
+            }
+            else
+            {
+                Console.WriteLine("Недостаточно цветков для продажи.");
+            }
         }
     }
 }

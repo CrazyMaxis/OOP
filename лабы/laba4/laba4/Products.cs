@@ -183,6 +183,30 @@
     {
         public Flower(int amount, int price, string name) : base(amount, price, name) { }
 
+        public override bool Equals(object obj)
+        {
+
+            if (obj is Flower) { return true; }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            Random random = new Random();
+            for (int i = 0; i < _name.Length; i++)
+            {
+                hash += _name[i];
+            }
+            hash *= random.Next();
+            return Math.Abs(hash);
+        }
+
+        public override string ToString()
+        {
+            return "Это цветок\0";
+        }
+
         public void Buy()
         {
             if (_amount != 0)

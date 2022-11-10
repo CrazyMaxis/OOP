@@ -1,31 +1,33 @@
-﻿namespace laba5
+﻿using System.Net;
+
+namespace laba5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Candy obj1 = new Candy(5, 500, "Комунарка", "Шоколапки");
-            Cake obj2 = new Cake(15, 2000, "Тортики от Светика", "Медовик");
+            Candy candy1 = new Candy(7, 543, "Maximus", "Victorius");
+            Cake cake = new Cake(15, 2000, "Комунарка", "Медовик");
+            Candy candy2 = new Candy(10, 321, "Maximus", "Genesis");
 
-            Pastry cake = obj2 as Pastry;
 
+            Pastry[] products = { candy1, cake, candy2};
 
-            if (obj1 is Product candy)
+            Gift gift = new Gift();
+
+            foreach (var i in products)
             {
-                candy.ShowInfo();
-                ((IProduct)candy).ShowInfo();
+                gift.addPastry(i);
             }
+            gift.Show();
+            gift.removePastry(2);
+            gift.Show();
 
-            Flower flower = new Flower(15, 3, "Роза");
-            Watch watch = new Watch(3, 500, "Томми Х Фига");
-
-            Product[] products = { cake, flower, watch };
-            Console.WriteLine();
-            Console.WriteLine("Вызов метода IAmPrinting");
-            foreach (var item in products)
-            {
-                Printer.IAmPrinting(item);
-            }
+            //Console.WriteLine($"Общая цена подарка: {Controller.GiftPrice(gift)}");
+            //Console.WriteLine(); Console.WriteLine("Отсортированный по весу список:"); Console.WriteLine();
+            //Gift giftSorted = Controller.WeightSort(gift);
+            //giftSorted.Show();
+            //Console.WriteLine("Компонент с наименьшим весом: " + Controller.FindMinWeight(gift));
 
         }
     }

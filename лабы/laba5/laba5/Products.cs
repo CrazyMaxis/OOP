@@ -135,10 +135,16 @@
             _pieces = weight / 100;
         }
 
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
         public override void ShowInfo()
         {
             base.ShowInfo();
-            Console.WriteLine($"Навзвание торта: {_name}.");
+            Console.WriteLine($"Название торта: {_name}.");
             Console.WriteLine($"{_pieces} кусков доступно для продажи.");
         }
 
@@ -185,7 +191,25 @@
         }
     }
 
-partial class Flower : Commodity, IProduct
+    sealed class Watch : Commodity, IProduct
+    {
+        public Watch(int amount, int price, string name) : base(amount, price, name) { }
+
+        public void Buy()
+        {
+            if (_amount != 0)
+            {
+                Console.WriteLine("Вы купили часы.");
+                _amount--;
+            }
+            else
+            {
+                Console.WriteLine("Недостаточно часов для продажи.");
+            }
+        }
+    }
+
+    partial class Flower : Commodity, IProduct
     {
         public Flower(int amount, int price, string name) : base(amount, price, name) { }
 
@@ -209,26 +233,6 @@ partial class Flower : Commodity, IProduct
         }
     }
 
-
-    sealed class Watch : Commodity, IProduct
-    {
-        public Watch(int amount, int price, string name) : base(amount, price, name) { }
-
-        public void Buy()
-        {
-            if (_amount != 0)
-            {
-                Console.WriteLine("Вы купили часы.");
-                _amount--;
-            }
-            else
-            {
-                Console.WriteLine("Недостаточно часов для продажи.");
-            }
-        }
-    }
-
-    
     static class Printer
     {
         public static void IAmPrinting(Product obj)

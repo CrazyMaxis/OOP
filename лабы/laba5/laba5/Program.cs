@@ -23,11 +23,11 @@ namespace laba5
             gift.removePastry(2);
             gift.Show();
 
-            //Console.WriteLine($"Общая цена подарка: {Controller.GiftPrice(gift)}");
-            //Console.WriteLine(); Console.WriteLine("Отсортированный по весу список:"); Console.WriteLine();
-            //Gift giftSorted = Controller.WeightSort(gift);
-            //giftSorted.Show();
-            //Console.WriteLine("Компонент с наименьшим весом: " + Controller.FindMinWeight(gift));
+            Console.WriteLine($"Общая цена подарка: {Controller.GiftPrice(gift)}");
+            Console.WriteLine(); Console.WriteLine("Отсортированный по весу список:"); Console.WriteLine();
+            Gift giftSorted = Controller.WeightSort(gift);
+            giftSorted.Show();
+            Console.WriteLine("Компонент с наименьшим весом: " + Controller.FindMinWeight(gift));
 
         }
     }

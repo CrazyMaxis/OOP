@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace laba5
+﻿namespace laba5
 {
     internal class Program
     {
@@ -29,6 +27,10 @@ namespace laba5
             giftSorted.Show();
             Console.WriteLine("Компонент с наименьшим весом: " + Controller.FindMinWeight(gift));
 
+            Console.WriteLine("\n\n- - - - - - - - Тест чтения файла - - - - - - - -");
+            Gift container = new Gift();
+            Controller.ReadFile(container, @"C:\Users\USER\Desktop\лабы\3сем\ооп\laba5\laba5\Gift.txt");
+            container.Show();
         }
     }
 }

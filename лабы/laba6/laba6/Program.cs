@@ -37,7 +37,7 @@
                             test1.addPastry(cake2);
                         }
 
-                        //throw new NullCollectionException("Пустая коллекция");
+                        throw new NullCollectionException("Пустая коллекция");
 
                         //test1.removePastry(-1);
 

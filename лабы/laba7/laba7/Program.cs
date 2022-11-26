@@ -43,6 +43,12 @@
                 cakelist.AddNode(cake2);
                 cakelist.AddNode(cake3);
                 cakelist.ShowInfo();
+
+                StaticOperations.InFile(cakelist, "C:\\Users\\USER\\Desktop\\лабы\\3сем\\ооп\\laba7\\laba7\\output.txt");
+                List<Cake> cakelist2 = new List<Cake>();
+                StaticOperations.ReadFile(cakelist2, "C:\\Users\\USER\\Desktop\\лабы\\3сем\\ооп\\laba7\\laba7\\output.txt");
+                Console.WriteLine(" - - - - - Вывод считанных данных - - - - - ");
+                cakelist2.ShowInfo();
             }
             catch (DeleteNotFounded exception)
             {

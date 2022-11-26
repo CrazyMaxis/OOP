@@ -20,6 +20,29 @@
                 Console.WriteLine(" - - - - - Вывод списка без удалённого элемента - - - - - ");
                 list.ShowInfo();
 
+                List<int> intlist = new List<int>();
+                Console.WriteLine(" - - - - - Вывод списка инт - - - - - ");
+                intlist.AddNode(1);
+                intlist.AddNode(2);
+                intlist.AddNode(3);
+                intlist.ShowInfo();
+
+                List<double> doublelist = new List<double>();
+                Console.WriteLine(" - - - - - Вывод списка дабл - - - - - ");
+                doublelist.AddNode(1.1);
+                doublelist.AddNode(2.2);
+                doublelist.AddNode(3.3);
+                doublelist.ShowInfo();
+
+                Cake cake1 = new Cake(11, 123, "aaa", "AAA");
+                Cake cake2 = new Cake(22, 321, "bbb", "BBB");
+                Cake cake3 = new Cake(33, 111, "ccc", "CCC");
+                List<Cake> cakelist = new List<Cake>();
+                Console.WriteLine(" - - - - - Вывод списка cake - - - - - ");
+                cakelist.AddNode(cake1);
+                cakelist.AddNode(cake2);
+                cakelist.AddNode(cake3);
+                cakelist.ShowInfo();
             }
             catch (DeleteNotFounded exception)
             {

@@ -10,7 +10,7 @@ namespace laba7
 
     }
 
-    class List<T> : IList<T>
+    class List<T>: IList<T>
     {
         Node<T> tail;
         Node<T> head;
@@ -57,6 +57,7 @@ namespace laba7
                 prev = curr;
                 curr = curr.Next;
             }
+            if (!flag) throw new DeleteNotFounded("Элемент не найден");
         }
         public void DeleteNode(T info)
         {
@@ -85,6 +86,7 @@ namespace laba7
                 prev = curr;
                 curr = curr.Next;
             }
+            if (!flag) throw new DeleteNotFounded("Элемент для удаления не найден");
         }
         public void ShowInfo()
         {

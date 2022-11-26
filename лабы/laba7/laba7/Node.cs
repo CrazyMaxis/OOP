@@ -20,4 +20,8 @@
             return count;
         }
     }
+    class DeleteNotFounded : Exception
+    {
+        public DeleteNotFounded(string message) : base(message) { }
+    }
 }

@@ -58,6 +58,7 @@
             str = A(str);
             A += StringEditor.RemoveSpace;
             Console.WriteLine($"{A.Method.Name}: {A(str)}");
+            str = A(str);
         }
     }
 }

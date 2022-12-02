@@ -5,8 +5,9 @@
         public string _type;
         public Image(string type)
         {
-            type = _type;
+            _type = type;
         }
+
         public override string ToString()
         {
             return _type;

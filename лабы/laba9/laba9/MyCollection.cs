@@ -10,7 +10,7 @@ namespace laba9
         void ShowCollection();
     }
 
-    internal class MyCollection<T> : ISet<T>
+    internal class MyCollection<T> : ISet<T>, IEnumerable<T>
     {
         private ArrayList items = new ArrayList();
 
@@ -41,6 +41,40 @@ namespace laba9
                 Console.WriteLine(item);
             }
         }
-        public IEnumerator GetEnumerator() => items.GetEnumerator();
+        IEnumerator<T> GetEnumerator()
+        {
+            return new CollectionEnumerator<T>(items);
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return ((IEnumerable<T>)items).GetEnumerator();
+        }
+    }
+
+    class CollectionEnumerator<T> : IEnumerator<T>
+    {
+        private ArrayList items;
+        private int position = -1;
+
+        public CollectionEnumerator(ArrayList items)
+        {
+            this.items = items;
+        }
+        public T Current => (T)items[position];
+        object IEnumerator.Current => Current;
+        public void Dispose() { }
+        public bool MoveNext()
+        {
+            position++;
+            return position < items.Count;
+        }
+        public void Reset()
+        {
+            position = -1;
+        }
     }
 }

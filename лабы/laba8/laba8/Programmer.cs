@@ -1,4 +1,6 @@
-﻿namespace laba8
+﻿using System.Text.RegularExpressions;
+
+namespace laba8
 {
     internal class Programmer
     {
@@ -21,6 +23,35 @@
             list.Clear();
             list.AddRange(NewList);
             mutate?.Invoke(list);
+        }
+    }
+
+    class StringEditor
+    {
+        public static string RemovePunctuation(string str)
+        {
+            str = Regex.Replace(str, "[.,;:]", string.Empty);
+            return str;
+        }
+
+        public static string AddSymbol(string str)
+        {
+            return str += "Lab08";
+        }
+
+        public static string ToUpper(string str)
+        {
+            return str.ToUpper();
+        }
+
+        public static string ToLower(string str)
+        {
+            return str.ToLower();
+        }
+
+        public static string RemoveSpace(string str)
+        {
+            return str.Replace(" ", string.Empty);
         }
     }
 }

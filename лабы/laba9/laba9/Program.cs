@@ -87,8 +87,6 @@ namespace laba9
                 }
                 Console.WriteLine();
             }
-
-            Console.WriteLine();
         }
         private static void ObsPlantChanged(object sender, NotifyCollectionChangedEventArgs e)
         {

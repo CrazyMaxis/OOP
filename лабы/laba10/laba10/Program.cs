@@ -78,9 +78,6 @@
             var task6 = list.OrderByDescending(car => car.Price);
             var task7 = list.Union(task3).OrderBy(car => car.RealeseYear).Where(car => car.Color == "white").Skip(1).Max();
             var task8 = list.Join(task2, car1 => car1.Brand, car2 => car2.Brand, (car1, car2) => new {price = car1.Price, color = car2.Color});
-
-            Console.WriteLine();
-            Console.WriteLine();
         }
     }
 }

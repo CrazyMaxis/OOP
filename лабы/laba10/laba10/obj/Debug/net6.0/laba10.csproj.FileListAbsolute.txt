@@ -1,0 +1,15 @@
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\bin\Debug\net6.0\laba10.exe
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\bin\Debug\net6.0\laba10.deps.json
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\bin\Debug\net6.0\laba10.runtimeconfig.json
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\bin\Debug\net6.0\laba10.dll
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\bin\Debug\net6.0\laba10.pdb
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.AssemblyInfo.cs
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.dll
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\refint\laba10.dll
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.pdb
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\laba10.genruntimeconfig.cache
+C:\Users\USER\Desktop\лабы\3сем\ооп\laba10\laba10\obj\Debug\net6.0\ref\laba10.dll

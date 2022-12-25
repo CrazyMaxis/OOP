@@ -84,6 +84,30 @@ namespace laba11
                 }
             }
         }
-        
+        public static void Invoke(object obj, string nameMethods, object[] paramets)
+        {
+            Type classA = obj.GetType();
+            var methodA = classA.GetMethod(nameMethods);
+            methodA.Invoke(obj, new object[] { Convert.ToDouble(paramets[0]),
+                            Convert.ToDouble(paramets[1]), Convert.ToInt32(paramets[2])});
+        }
+        public static object Create<T>(T obj)   
+        {
+            ConstructorInfo? cons = null;
+            Type type = obj as Type;
+            foreach (var n in type.GetConstructors())
+            {
+                if (n.IsPublic && n.GetParameters().Length == 0)
+                {
+                    cons = n;
+                    break;
+                }
+            }
+            if (cons == null)
+            {
+                return null;
+            }
+            return cons.Invoke(new object[] { });
+        }
     }
 }

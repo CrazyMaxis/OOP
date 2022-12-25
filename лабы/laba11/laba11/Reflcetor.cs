@@ -80,21 +80,21 @@ namespace laba11
                     if (collectionParameters[i].ParameterType.Name == param)
                     {
                         sw.WriteLine(method);
+                        break;
                     }
                 }
             }
         }
-        public static void Invoke(object obj, string nameMethods, object[] paramets)
+        public static void Invoke(object obj, string nameMethods, object[] parametrs)
         {
             Type classA = obj.GetType();
             var methodA = classA.GetMethod(nameMethods);
-            methodA.Invoke(obj, new object[] { Convert.ToDouble(paramets[0]),
-                            Convert.ToDouble(paramets[1]), Convert.ToInt32(paramets[2])});
+            methodA.Invoke(obj, parametrs);
         }
         public static object Create<T>(T obj)   
         {
             ConstructorInfo? cons = null;
-            Type type = obj as Type;
+            Type type = obj.GetType();
             foreach (var n in type.GetConstructors())
             {
                 if (n.IsPublic && n.GetParameters().Length == 0)

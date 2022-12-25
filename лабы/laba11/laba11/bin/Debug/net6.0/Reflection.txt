@@ -1,0 +1,23 @@
+- - - - - определение имени сборки - - - - -
+laba11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+- - - - - публичные конструкторы - - - - -
+True
+- - - - - все общедоступные публичные методы - - - - -
+get_MyPropertyPublic
+myPublicMethod
+MethodInterface
+ExampleDouble
+GetType
+ToString
+Equals
+GetHashCode
+- - - - - информация о полях и свойствах класса - - - - -
+_myFieldPublic
+MyPropertyPublic
+- - - - - все реализованные классом интерфейсы - - - - -
+MyInterface
+- - - - - выводит по имени класса имена методов - - - - -
+Void ExampleDouble(Double, Double, Double)
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+laba11.SomeClass
+///////////////////////////////////////////////////////////

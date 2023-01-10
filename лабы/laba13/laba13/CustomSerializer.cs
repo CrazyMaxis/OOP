@@ -10,7 +10,19 @@ using System.Xml.Serialization;
 
 namespace laba13
 {
-    internal class CustomSerializer
+    interface ISerialize
+    {
+        //void SOAPSerialize(object obj, string path);
+        void XMLSerialize(Pastry obj, string path);
+        void BinarySerialize(object obj, string path);
+        void JSONSerialize(Pastry obj, string path);
+        //Pastry SOAPDeserialize(string path);
+        Pastry XMLDeserialize(string path);
+        Pastry BinaryDeserialize(string path);
+        Pastry JSONDeserialize(string path);
+    }
+
+    internal class CustomSerializer : ISerialize
     {
         public void BinarySerialize(object obj, string path)
         {

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace laba13
 {
     [Serializable]
-    internal class Product
+    public class Product
     {
         protected int _price;
 
-        public Product(int price)
-        {
-            _price = price;
-        }
+        //public Product(int price)
+        //{
+        //    _price = price;
+        //}
 
         public int Price
         {
@@ -35,17 +35,17 @@ namespace laba13
     }
 
     [Serializable]
-    internal class Pastry : Product
+    public class Pastry : Product
     {
-        protected int _weight;
         [NonSerialized]
+        protected int _weight;
         protected string _factory;
 
-        public Pastry(int price, int weight, string factory) : base(price)
-        {
-            _weight = weight;
-            _factory = factory;
-        }
+        //public Pastry(int price, int weight, string factory) : base(price)
+        //{
+        //    _weight = weight;
+        //    _factory = factory;
+        //}
 
         public int Weight
         {

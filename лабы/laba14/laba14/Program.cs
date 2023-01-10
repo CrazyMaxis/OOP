@@ -59,10 +59,6 @@ namespace laba14
             {
                 Console.WriteLine($"It's {DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}");
             }
-
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
         }
     }
 }

@@ -20,19 +20,19 @@ namespace laba12
             File.AppendAllText(_path, $"{DateTime.Now} Выполнение задания Z5A\n");
             var listFiles = Directory.GetFiles(nameDisk);
             var listCat = Directory.GetDirectories(nameDisk);
-            Directory.CreateDirectory(nameDisk + "\\TNSInspect");
-            File.AppendAllText(nameDisk + "\\TNSInspect\\TNSdirinfo.txt", "Файлы: ");
+            Directory.CreateDirectory(nameDisk + "\\PMIInspect");
+            File.AppendAllText(nameDisk + "\\PMIInspect\\PMIdirinfo.txt", "Файлы: ");
             foreach (var a in listFiles)
             {
-                File.AppendAllText(nameDisk + "\\TNSInspect\\TNSdirinfo.txt", a + " ");
+                File.AppendAllText(nameDisk + "\\PMIInspect\\PMIdirinfo.txt", a + " ");
             }
-            File.AppendAllText(nameDisk + "\\TNSInspect\\TNSdirinfo.txt", "\nДиректории: ");
+            File.AppendAllText(nameDisk + "\\PMIInspect\\PMIdirinfo.txt", "\nДиректории: ");
             foreach (var a in listCat)
             {
-                File.AppendAllText(nameDisk + "\\TNSInspect\\TNSdirinfo.txt", a + " ");
+                File.AppendAllText(nameDisk + "\\PMIInspect\\PMIdirinfo.txt", a + " ");
             }
-            File.Copy(nameDisk + "\\TNSInspect\\TNSdirinfo.txt", nameDisk + "\\TNSInspect\\TNSdirinfo2.txt");
-            File.Delete(nameDisk + "\\TNSInspect\\TNSdirinfo.txt");
+            File.Copy(nameDisk + "\\PMIInspect\\PMIdirinfo.txt", nameDisk + "\\PMIInspect\\PMIdirinfo2.txt");
+            File.Delete(nameDisk + "\\PMIInspect\\PMIdirinfo.txt");
         }
         public static void Z6b(string directory)
         {
@@ -42,24 +42,23 @@ namespace laba12
             }
             File.AppendAllText(_path, $"{DateTime.Now} Выполнение задания Z5b\n");
             int size = 0;
-            Directory.CreateDirectory("D://TNSFiles");
+            Directory.CreateDirectory("C:\\PMIFiles");
             foreach (var file in Directory.GetFiles(directory))
             {
-                if ((new FileInfo(file)).Extension == ".pdf")
+                if ((new FileInfo(file)).Extension == ".docx")
                 {
-                    string pth = $"D:\\TNSFiles\\copy{size++}.pdf";
+                    string pth = $"C:\\PMIFiles\\copy{size++}.docx";
                     (new FileInfo(file)).CopyTo(pth);
                 }
             }
-            (new DirectoryInfo("D:\\TNSFiles")).MoveTo("D:\\TNSInspect2"); //Move("D:\\TNSFiles", "D:\\TNSInspect");
+            (new DirectoryInfo("C:\\PMIFiles")).MoveTo("C:\\PMIInspect2"); //Move("C:\\PMIFiles", "C:\\PMIInspect");
         }
         public static void Z6c(string nameFolder)
         {
             File.AppendAllText(_path, $"{DateTime.Now} Выполнение задания Z5c\n");
-            string oath = Path.GetDirectoryName(nameFolder);
-            ZipFile.CreateFromDirectory(nameFolder, oath + "MyZip.zip");
+            ZipFile.CreateFromDirectory(nameFolder, "MyZip.zip");
 
-            ZipFile.ExtractToDirectory(oath + "MyZip.zip", oath + "MyZipFolder");
+            ZipFile.ExtractToDirectory("MyZip.zip", "C:\\" + "MyZipFolder");
         }
     }
 }

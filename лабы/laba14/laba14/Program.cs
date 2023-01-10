@@ -64,7 +64,6 @@ namespace laba14
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine();
         }
     }
 }

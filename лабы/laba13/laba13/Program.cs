@@ -108,6 +108,7 @@ namespace laba13
                     Console.WriteLine();
                 }
             }
+
             var bob2 = people.Elements("person").FirstOrDefault(p => p.Attribute("name")?.Value == "Bob");
             if (bob2 != null)
             {
